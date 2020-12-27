@@ -2,7 +2,7 @@
 
 import socket
 
-HOST = "0.0.0.0" # Listen on IP
+HOST = "" # Listen on IP
 PORT = "8080" # Port to listen on (1 -65535)
 # Creates a socket, the AF_INET is the IPV4 address familiy
 # SOCK_STREAM is for TCP (reliable transfer) used to transport the message
