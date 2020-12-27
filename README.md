@@ -14,3 +14,17 @@ connect_ex()
 send()
 recv()
 close()
+
+
+
+We look at a simple socket example using server.py and client.py.  The wireshark screen shot shows the initial TCP connection
+being setup then the message sent.  The server PORT of 1234 and client PORT 25946 
+1.  SYN
+2.  SYN/ACK
+3.  ACK
+4.  PSH, ACK (send the data "Welcome to the server")
+5.  ACK
+6.  FIN, ACK
+7.  ACK
+
+
