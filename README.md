@@ -26,6 +26,15 @@ being setup then the message sent.  The server PORT of 1234 and client PORT 2594
 6.  FIN, ACK
 7.  ACK
 
+# Viewing socket state
+
+To see the current state of all  sockets on the host
+
+netstat -an
+
+lsof gives you the COMMAND, PID (process id), and USER (user id) of open Internet sockets when used with the -i option.
+
+lsof -i -n
 
 References:
 
