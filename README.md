@@ -15,7 +15,7 @@ send()
 recv()
 close()
 
-
+![TCP Connection](tcpCapture.PNG)
 
 We look at a simple socket example using server.py and client.py.  The wireshark screen shot shows the initial TCP connection
 being setup then the message sent.  The server PORT of 1234 and client PORT 25946 
