@@ -2,15 +2,17 @@
 
 import socket
 
-HOST = "" # Listen on IP
-PORT = "8080" # Port to listen on (1 -65535)
+HOST = "0.0.0.0" # Listen on all IP Address
+
+PORT = 8080 # Port to listen on (1 -65535)
 # Creates a socket, the AF_INET is the IPV4 address familiy
 # SOCK_STREAM is for TCP (reliable transfer) used to transport the message
 # with statement https://www.geeksforgeeks.org/with-statement-in-python/
 # Assign socket to object s
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind(HOST, PORT) # Assoicate the socket with the IP and PORT
+    print(f"Listening on port {PORT} with IP Address {HOST}")
+    s.bind((HOST, PORT)) # Assoicate the socket with the IP and PORT
     s.listen() # To accept connection the server listens
     # When a client connects it returns a new socket connection
     # The client IP address
