@@ -43,8 +43,13 @@ When we have message bigger than our buffer size and we wish to maintain the con
 
 The following example:  bufferServer.py and bufferClient.py
 
+# Sending and receiving objects
+
 
 References:
 
-Lesson learnt from https://realpython.com/python-sockets/ and https://www.youtube.com/watch?v=Lbfe3-v7yE0
+Lesson learnt from:
+* https://realpython.com/python-sockets/ 
+* https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3
+* and https://www.youtube.com/watch?v=Lbfe3-v7yE0
 
