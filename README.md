@@ -1,6 +1,6 @@
 # Sockets in Python 3
 
-Python’s socket module provides an interface to the Berkeley sockets API. This is the module that we’ll use and discuss in this tutorial.
+Python’s socket module provides an interface to the Berkeley sockets API. To transfer a string over a socket it needs to be represented as a sequence of bytes first and decoded back after transfer. If you already have bytes (like a binary representation of an image) no additional encoding and decoding is needed. We use utf-8 encoding to do this.  To transfer objects the 'pickle' module is used.
 
 The primary socket API functions and methods in this module are:
 
