@@ -1,6 +1,6 @@
 # Sockets in Python 3
 
-Python’s socket module provides an interface to the Berkeley sockets API. This is the module that we’ll use and discuss in this tutorial.
+Python’s socket module provides an interface to the Berkeley sockets API. To transfer a string over a socket it needs to be represented as a sequence of bytes first and decoded back after transfer. If you already have bytes (like a binary representation of an image) no additional encoding and decoding is needed. We use utf-8 encoding to do this.  To transfer objects the 'pickle' module is used.
 
 The primary socket API functions and methods in this module are:
 
@@ -32,17 +32,24 @@ To see the current state of all  sockets on the host
 
 netstat -an
 
-# Buffer and streams
-
-When we have message bigger than our buffer size and we wish to maintain the connection.  If the buffer is exceed the connction will close.  In order to overcome this we can use a HEADER.  This will tell the client how much data we are going to send.  A fixed length HEADER + msg.
-
-The following example:  bufferServer.py and bufferClient.pu
-
 lsof gives you the COMMAND, PID (process id), and USER (user id) of open Internet sockets when used with the -i option.
 
 lsof -i -n
 
+
+# Buffer and streams
+
+When we have message bigger than our buffer size and we wish to maintain the connection.  If the buffer is exceed the connction will close.  In order to overcome this we can use a HEADER.  This will tell the client how much data we are going to send.  A fixed length HEADER + msg. The first n bytes of data will be the header data, which will include the length of the message which the client will is to receive.
+
+The following example:  bufferServer.py and bufferClient.py
+
+# Sending and receiving objects
+
+
 References:
 
-Lesson learnt from https://realpython.com/python-sockets/ and https://www.youtube.com/watch?v=Lbfe3-v7yE0
+Lesson learnt from:
+* https://realpython.com/python-sockets/ 
+* https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3
+* and https://www.youtube.com/watch?v=Lbfe3-v7yE0
 
