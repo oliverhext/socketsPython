@@ -1,4 +1,5 @@
 import socket
+import pickle
 
 
 HEADERSIZE = 10
@@ -7,7 +8,7 @@ s.connect((socket.gethostname(), 1234))
 
 while True:
     # Set values:  clear full_msg and set new_msg to true
-    full_msg = ""
+    full_msg = b""
     new_msg = True
     while True:
         # Receive the message in chunkc of 16
@@ -23,12 +24,15 @@ while True:
             print(f"The message length is {msglen}")
             new_msg = False
         print(f"START BUILDING MESSAGE  {msg}")    
-        full_msg += msg.decode("utf-8")
+        full_msg += msg
         if len(full_msg)-HEADERSIZE == msglen:
             print("Full msg received")
             #Print full message minus the HEADER SIZE
             print(full_msg[HEADERSIZE:])
+            print("Pickle the object")
+            d= pickle.loads(full_msg[HEADERSIZE:])
+            print(d)
             new_msg = True
-            full_msg = ""
+            full_msg = b""
             
     print(full_msg)

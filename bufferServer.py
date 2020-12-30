@@ -14,12 +14,15 @@ while True:
     print(f"connection from {address} has been established")
     
     msg = "AAAAABBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKKLLLLL"
-    msg = f"{len(msg):<{HEADERSIZE}}"+msg  
+    msg = f"{len(msg):<{HEADERSIZE}}"+msg 
+    print("*****  Header Size and Message ******")
+    print(f"{len(msg):{HEADERSIZE}}"+msg)
     
     clientsocket.send(bytes(msg, "utf-8"))
     while True:
         time.sleep(3)
         msg = f"The time is {time.time()}"
+        print(f"{len(msg):{HEADERSIZE}}"+msg)
         msg = f"{len(msg):{HEADERSIZE}}"+msg         
         clientsocket.send(bytes(msg, "utf-8"))
         
